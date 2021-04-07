@@ -35,6 +35,10 @@ shape_feature = ShapelyFeature(shpreader.Reader(feat_file).geometries(),\
  ccrs.PlateCarree(), facecolor='none', edgecolor='k', linewidth=0.5)
 ax.add_feature(shape_feature)
 
+# Plot stations names
+for index, row in df.iterrows():
+    plt.text(row['lon'],row['lat'],row['id'])
+
 # Add info from DataFrame
 normalize = colors.Normalize(vmin=min(df[main_var]), vmax=max(df[main_var]))
 cs = ax.scatter(df['lon'].values, df['lat'].values,\
@@ -47,6 +51,8 @@ cbar = colorbar.ColorbarBase(cax, cmap=plt.get_cmap('jet'),\
  norm=normalize)
 cbar.set_label(main_var)
 
-# Plot and save
-plt.savefig(file_out)
-plt.show()
+# Plot - show or and save
+if file_out == '':
+    plt.show()
+else:
+    plt.savefig(file_out,bbox_inches='tight')
