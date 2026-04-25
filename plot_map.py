@@ -1,6 +1,3 @@
-#!/usr/bin/env python3.7.6
-# -*- Coding: UTF-8 -*-
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
@@ -16,7 +13,7 @@ main_var = 'alt'
 # Filenames
 file_in = 'info_est.csv'
 feat_file = 'shp/BRA_adm1'
-file_out = 'map_%s.png' %main_var
+file_out = f'map_{main_var}.png'
 
 # Load CSV file into DataFrame
 df = pd.read_csv(file_in)
