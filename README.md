@@ -18,7 +18,7 @@ git clone https://github.com/viniroger/plot_map
 cd plot_map
 ```
 
-## 2. `plot_map.py`: Station Data Plotter
+## A. `plot_map.py`: Station Data Plotter
 
 This script is designed to plot geographical data points (e.g., weather stations) from a CSV file onto a map, including administrative boundaries and a color-coded representation of a chosen variable. Features:
 
